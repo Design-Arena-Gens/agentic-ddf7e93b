@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.divine-text {
+  font-family: var(--font-cinzel);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.sacred-text {
+  font-family: var(--font-lora);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.6),
+              0 0 60px rgba(255, 215, 0, 0.4),
+              inset 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.glow-red {
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.6),
+              0 0 60px rgba(220, 38, 38, 0.4);
+}
+
+.torch-glow {
+  position: relative;
+}
+
+.torch-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+  animation: flame 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-divine-dark {
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%);
+  }
+}
